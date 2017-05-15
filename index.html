@@ -1,49 +1,158 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+	<title>reveal.js</title>
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+	<link href="https://fonts.googleapis.com/css?family=Cabin|Lobster+Two" rel="stylesheet">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/black.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h1>AngularJS</h1>
+				<p>Interactive Course</p>
+			</section>
+
+			<section>
+				<h1>Project setup</h1>
+				<ul>
+					<li>ES5</li>
+					<li>AngularJS 1.6.4</li>
+					<li>Gulp</li>
+				</ul>
+			</section>
+
+			<section>
+				<h1>Components</h1>
+				<ul>
+					<li>Lifecycle hooks</li>
+					<li>Bindings</li>
+					<li>Isolate scope</li>
+					<li>Default controllerAs syntax ($ctrl)</li>
+				</ul>
+			</section>
+
+			<section>
+				<h1>Folder structure</h1>
+				<img src="folder structure.svg" alt="Folder Structure" height="200rem" style="padding: 5rem">
+			</section>
+
+			<section>
+				<h1>Pizza Tuesday</h1>
+				<h3>What we'll be building</h3>
+				<ul>
+					<li>Submit an order</li>
+					<li>View orders in realtime</li>
+				</ul>
+			</section>
+
+			<section>
+				<figure>
+					<img src="component layout pizzatuesday.png" alt="Component layout of our application" height="750rem">
+				</figure>
+			</section>
+
+			<section>
+				<h2>Writing our main component</h2>
+			</section>
+
+			<section>
+				<section>
+					<h1>UI-router</h1>
+					<code data-trim data-noescape>
+						<pre>
+$stateProvider
+	.state('main', {
+		url: "/",
+		component: 'main'
+	})
+						</pre>
+					</code>
+				</section>
+
+				<section>
+					<h2>State vs url-routing</h2>
+					<ul>
+						<li>Change state regardless of url</li>
+						<li>Easy nested routes</li>
+					</ul>
+				</section>
+			</section>
+
+			<section>
+				<h1>Writing our pizza service</h1>
+			</section>
+
+			<section>
+				<h1>Writing our option menu component</h1>
+				<p>To display the pizza</p>
+			</section>
+
+			<section>
+				<h1>Component bindings</h1>
+				<table>
+					<thead>
+						<tr>
+							<th><</th>
+							<th>=</th>
+							<th>@</th>
+							<th>&</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>One-way binding</td>
+							<td>Two-way binding</td>
+							<td>Interpolation binding</td>
+							<td>Expression binding</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+
+			<section>
+				<h1>Writing our order component</h1>
+				<p>To display the current order</p>
+			</section>
 		</div>
+	</div>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-		</script>
-	</body>
+	<script>
+		// More info about config & dependencies:
+		// - https://github.com/hakimel/reveal.js#configuration
+		// - https://github.com/hakimel/reveal.js#dependencies
+		Reveal.initialize({
+			dependencies: [
+				{ src: 'plugin/markdown/marked.js' },
+				{ src: 'plugin/markdown/markdown.js' },
+				{ src: 'plugin/notes/notes.js', async: true },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+			]
+		});
+	</script>
+</body>
+
 </html>

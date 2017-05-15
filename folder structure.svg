@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="163px" height="106px" viewBox="0 0 163 106" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>folder structure</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="folder-structure" transform="translate(0.000000, -9.000000)">
+            <path d="M1,14 L1,109" id="Line" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square"></path>
+            <path d="M16,14 L1,14" id="Line" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square"></path>
+            <path d="M46,46 L1,46" id="Line" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square"></path>
+            <path d="M46,78 L1,78" id="Line" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square"></path>
+            <path d="M46,110 L1,110" id="Line" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square"></path>
+            <text id="app" font-family="Cabin-Regular, Cabin" font-size="20" font-weight="normal" fill="#FFFFFF">
+                <tspan x="26" y="19">app</tspan>
+            </text>
+            <text id="components" font-family="Cabin-Regular, Cabin" font-size="20" font-weight="normal" fill="#FFFFFF">
+                <tspan x="56" y="52">components</tspan>
+            </text>
+            <text id="containers" font-family="Cabin-Regular, Cabin" font-size="20" font-weight="normal" fill="#FFFFFF">
+                <tspan x="56" y="82">containers</tspan>
+            </text>
+            <text id="services" font-family="Cabin-Regular, Cabin" font-size="20" font-weight="normal" fill="#FFFFFF">
+                <tspan x="56" y="114">services</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

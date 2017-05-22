@@ -15,7 +15,7 @@
 	<!-- Theme used for syntax highlighting of code -->
 	<link rel="stylesheet" href="lib/css/zenburn.css">
 
-	<style >
+	<style>
 		.linkedin {
 			background-color: #fff;
 			border: 0;
@@ -38,6 +38,10 @@
 			<section>
 				<h1>AngularJS</h1>
 				<p>Interactive Course</p>
+
+				<aside class="notes">
+					<p>Welcome</p>
+				</aside>
 			</section>
 
 			<section>
@@ -45,47 +49,86 @@
 				<ul>
 					<li>ES5</li>
 					<li>AngularJS 1.6.4</li>
+					<li>Components only (Angular 1.5.0 or later)</li>
 					<li>Gulp</li>
 				</ul>
+
+				<aside class="notes">
+					<p>We'll be using ES5 because most people aren't aware of the changes in ES6. If people are interested we can organise
+						a separate course on this.</p>
+					<p>Were using the latest stable version of AngularJS</p>
+					<p>The app we'll be building will be purely component based, a feature which was introduced in Angular 1.5.<br> Component
+						based applications are very popular in the web right now and will probably stay popular for quite some time.</p>
+					<p>We're using gulp as a task runner, this will build our code and run our tests. We won't go into this because of time.
+						If people are interested we can do a separate course on this.</p>
+				</aside>
 			</section>
 
 			<section>
-				<h2>Components</h2>
+				<h2>Pizza Tuesday</h2>
+				<p><a href="http://www.pizzatuesday.herokuapp.com/">http://www.pizzatuesday.herokuapp.com/</a></p>
 				<ul>
-					<li>Default controllerAs syntax ($ctrl)</li>
-					<li>Isolate scope</li>
-					<li>Bindings</li>
-					<li>Lifecycle hooks</li>
+					<li>Choose a pizza, crust and size</li>
+					<li>Submit your order</li>
+					<li>View orders in realtime</li>
 				</ul>
+
+				<aside class="notes">
+					<p>The app we'll be building will be an app for pizza tuesday.</p>
+					<p>It will consist of the following: choosing your pizza, submitting your pizza and viewing orders in realtime.</p>
+					<p>In this course we'll limit ourselves to the first step: choosing a pizza.</p>
+				</aside>
+			</section>
+
+			<section>
+				<h2>Download the source code</h2>
+				<a href="https://github.com/rclaes1995/angularjs-pizzahut-course">https://github.com/rclaes1995/angularjs-pizzahut-course</a>
+
+				<aside class="notes">
+					<p>Browse to the folder in your terminal, npm install and gulp serve.</p>
+					<p>Open the code in your favorite editor.</p>
+				</aside>
 			</section>
 
 			<section>
 				<h2>Folder structure</h2>
 				<img src="folder structure.svg" alt="Folder Structure" height="200rem" style="padding: 5rem">
-			</section>
 
-			<section>
-				<h2>Pizza Tuesday</h2>
-				<h4>What we'll be building</h4>
-				<ul>
-					<li>Submit an order</li>
-					<li>View orders in realtime</li>
-				</ul>
+				<aside class="notes">
+					<i>After opening the source code</i>
+					<p>As you can see, the following three folders are the main folders of our application.</p>
+					<p>Components are reusable.</p>
+					<p>Containers are page-like components that can be browsed to with the URL.</p>
+					<p>Containers consist of reusable components and often contain logic.</p>
+				</aside>
 			</section>
 
 			<section>
 				<figure>
 					<img src="component layout pizzatuesday.png" alt="Component layout of our application" height="750rem">
 				</figure>
+
+				<aside class="notes">
+					<p>This is the component layout of the container we'll be building.</p>
+					<p>As you can see, many components are reusable, drastically decreasing our lines of code.</p>
+					<p>Components that are indicated with a crown are smart components. All other components are dumb/representational components.</p>
+					<p>Smart components contain logic. Dumb components do not. This will become clear throughout the course.</p>
+				</aside>
 			</section>
 
 			<section>
+				<!-- Show component layout here, highlighting the main component -->
 				<h2>Writing our main component</h2>
 			</section>
 
 			<section>
 				<section>
-					<h2>UI-router</h2>
+					<h2>Routing in Angular</h2>
+					<aside class="notes">
+						<p>A router in AngularJS is a way to navigate between pages (in our case container components) without reloading the page.</p>
+					</aside>
+				</section>
+				<section>
 					<code data-trim data-noescape>
 						<pre>
 $stateProvider
@@ -95,23 +138,106 @@ $stateProvider
 	})
 						</pre>
 					</code>
-				</section>
 
+					<p>
+						<a href="https://pizzatuesday.herokuapp.com/#!/">https://pizzatuesday.herokuapp.com/#!/</a>
+					</p>
+
+					<aside class="notes">
+						<p>By changing the part after the /#!/, it will not trigger an actual url change, but update the component accordingly.</p>
+					</aside>
+				</section>
 				<section>
-					<h2>State vs url-routing</h2>
-					<ul>
-						<li>Change state regardless of url</li>
-						<li>Easy nested routes</li>
-					</ul>
+					<code data-trim data-noescape>
+						<pre>
+$stateProvider
+	.state('main', {
+		url: "/orders",
+		component: 'orderList'
+	})
+						</pre>
+					</code>
+
+					<p>
+						<a href="https://pizzatuesday.herokuapp.com/#!/orders">https://pizzatuesday.herokuapp.com/#!/orders</a>
+					</p>
+
+					<aside class="notes">
+						<p>Another example could be where we load the orderList when browsing to orders.</p>
+						<p>You may notice we're using stateprovider instead of routeprovider.</p>
+						<p>This is because we use UI-router, which is a little more advanced than ng-router.</p>
+					</aside>
 				</section>
 			</section>
 
 			<section>
+				<!-- Show component layout here, highlighting the main component -->
 				<h2>Writing our header and footer components</h2>
 			</section>
 
 			<section>
 				<h2>Writing our pizza service</h2>
+				<!-- explain dependency injection -->
+			</section>
+
+			<section>
+				<section>
+					<h2>Dependency injection</h2>
+
+					<aside class="notes">
+						<p>Dependency injection is a design pattern that injects dependencies into a dependant component.</p>
+						<p>AngularJS wrote its own implementation, as seen in the next slide</p>
+					</aside>
+				</section>
+				<section>
+					<h4>Implicit annotation</h4>
+					<code style="font-size:2rem;">
+						<pre>
+angular
+	.module('app')
+	.controller('SomeController', function(someService, $state) {
+
+	});
+						</pre>
+					</code>
+					<sup class="fragment highlight-red visible">When minifying our code, the name of our services will change, causing our code to break.</sup>
+
+
+					<aside class="notes">
+						<p>This is the way implicit dependency injection happens. When using angular.module.controller, .service, .factory and
+							so on, the second argument will be a dependant function. Parameters of that function will be Dependency injected when
+							registering the controller, service, factory.</p>
+					</aside>
+				</section>
+				<section>
+					<h4>Inline array annotation</h4>
+					<code style="font-size:2rem;">
+						<pre>
+angular
+	.module('app')
+	.controller('SomeController', 
+	['someService', '$state', function(someService, $state) {
+
+	}]);
+						</pre>
+					</code>
+				</section>
+				<section>
+					<h4>Annotation by hand ($inject)</h4>
+					<code style="font-size:2rem;">
+						<pre>
+var SomeController = function(someService, $state) {
+
+}
+
+SomeController.$inject = ['someService', '$state'];
+ 
+angular
+	.module('app')
+	.controller('SomeController', SomeController);
+						</pre>
+					</code>
+				</section>
 			</section>
 
 			<section>
@@ -119,7 +245,7 @@ $stateProvider
 				<p>To display the pizza</p>
 
 				<aside class="notes">
-					div > .options-menu > h2.options-menu__title + options-menu__list
+					div>.options-menu>h2.options-menu__title+options-menu__list
 				</aside>
 			</section>
 
@@ -159,6 +285,13 @@ $stateProvider
 					<li>Classlike controllers</li>
 					<li>Preparation for Angular 2</li>
 				</ul>
+
+				<aside class="notes">
+					<p>In our view, it'll be more clear from which controller each property comes.</p>
+					<p>Controllers are named, so $parent is no longer necessary. We can just put a controller in a controller.</p>
+					<p>We map methods on "this". </p>
+					<p>In Angular 2, scope is no longer a thing.</p>
+				</aside>
 			</section>
 
 			<section>
@@ -166,8 +299,30 @@ $stateProvider
 			</section>
 
 			<section>
+				<h2>Recap: components</h2>
+				<ul>
+					<li>Default controllerAs syntax ($ctrl)</li>
+					<li>Isolated</li>
+					<li>Bindings</li>
+					<li>Lifecycle hooks</li>
+				</ul>
+
+				<aside class="notes">
+					<p>controllerAs syntax: As seen in a previous slide, it makes our code more clear.</p>
+					<p>Isolate scope: Components can never be changed from outside, making it easier to understand the flow of our application</p>
+					<p>Bindings allow us not only to pass data to the component, but also to pass functions. This allows us to make dumb/presentational
+						components.
+					</p>
+					<p>Lifecycle hooks allow us to do something at given events in the lifecycle of a component... onInit, onChanges, onDestroy,
+						postLink
+					</p>
+				</aside>
+			</section>
+
+			<section>
 				<h2>The end!</h2>
-				<p><img class="linkedin" height="100rem" style="margin-top: 10rem;background: #fff; border: 0; border-radius: 1rem;" src="linkedin.svg" alt="Linked In"></p>
+				<p><img class="linkedin" height="100rem" style="margin-top: 10rem;background: #fff; border: 0; border-radius: 1rem;" src="linkedin.svg"
+					 alt="Linked In"></p>
 			</section>
 		</div>
 	</div>

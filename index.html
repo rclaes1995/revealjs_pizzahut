@@ -45,7 +45,7 @@
 			</section>
 
 			<section>
-				<h2>Project setup</h2>
+				<h3>Project setup</h3>
 				<ul>
 					<li>ES5</li>
 					<li>AngularJS 1.6.4</li>
@@ -65,7 +65,7 @@
 			</section>
 
 			<section>
-				<h2>Pizza Tuesday</h2>
+				<h3>Pizza Tuesday</h3>
 				<p><a href="http://www.pizzatuesday.herokuapp.com/">http://www.pizzatuesday.herokuapp.com/</a></p>
 				<ul>
 					<li>Choose a pizza, crust and size</li>
@@ -81,8 +81,8 @@
 			</section>
 
 			<section>
-				<h2>Download the source code</h2>
-				<a href="https://github.com/rclaes1995/angularjs-pizzahut-course">https://github.com/rclaes1995/angularjs-pizzahut-course</a>
+				<h3>Download the source code</h3>
+				<a href="https://github.com/rclaes1995/angularjs-pizzatuesday-course">https://github.com/rclaes1995/angularjs-pizzatuesday-course</a>
 
 				<aside class="notes">
 					<p>Browse to the folder in your terminal, npm install and gulp serve.</p>
@@ -91,7 +91,22 @@
 			</section>
 
 			<section>
-				<h2>Folder structure</h2>
+				<h3>Run the project</h3>
+				<ul>
+					<li>Browse to the project in your terminal</li>
+					<li>npm install</li>
+					<li>npm run bower</li>
+					<li>npm run serve</li>
+				</ul>
+
+				<aside class="notes">
+					<p>Browse to the folder in your terminal, npm install and gulp serve.</p>
+					<p>Open the code in your favorite editor.</p>
+				</aside>
+			</section>
+
+			<section>
+				<h3>Folder structure</h3>
 				<img src="folder structure.svg" alt="Folder Structure" height="200rem" style="padding: 5rem">
 
 				<aside class="notes">
@@ -105,7 +120,7 @@
 
 			<section>
 				<figure>
-					<img src="component layout pizzatuesday.png" alt="Component layout of our application" height="750rem">
+					<img src="component layout pizzatuesday.png" alt="Component layout of our application" height="600rem">
 				</figure>
 
 				<aside class="notes">
@@ -118,12 +133,24 @@
 
 			<section>
 				<!-- Show component layout here, highlighting the main component -->
-				<h2>Writing our main component</h2>
+				<h3>Writing our main component</h3>
+				<img src="main.png" alt="Main" height="500rem" style="padding:.5rem">
+
+				<aside class="notes">
+					<pre>
+							.container-fluid>main.row
+						</pre> .container>
+				</aside>
 			</section>
 
 			<section>
 				<section>
-					<h2>Routing in Angular</h2>
+					<h3>Routing in Single Page Applications</h3>
+					<ol style="text-align: center;">
+						<li>Listen to the URL for changes (https://pizzatuesday.herokuapp.com/#!/)</li>
+						<li>Change the active view accordingly</li>
+						<li>Render it between &lt;ui-view&gt;&lt;/ui-view&gt;</li>
+					</ol>
 					<aside class="notes">
 						<p>A router in AngularJS is a way to navigate between pages (in our case container components) without reloading the page.</p>
 					</aside>
@@ -172,17 +199,26 @@ $stateProvider
 
 			<section>
 				<!-- Show component layout here, highlighting the main component -->
-				<h2>Writing our header and footer components</h2>
+				<h3>Writing our header and footer components</h3>
+				<img src="titlefooter.png" alt="Title and footer" height="500rem" style="padding:.5rem">
+
+				<aside class="notes">
+					<pre>
+.title>img
+
+footer
+					</pre>
+				</aside>
 			</section>
 
 			<section>
-				<h2>Writing our pizza service</h2>
+				<h3>Writing our pizza service</h3>
 				<!-- explain dependency injection -->
 			</section>
 
 			<section>
 				<section>
-					<h2>Dependency injection</h2>
+					<h3>Dependency injection</h3>
 
 					<aside class="notes">
 						<p>Dependency injection is a design pattern that injects dependencies into a dependant component.</p>
@@ -241,16 +277,18 @@ angular
 			</section>
 
 			<section>
-				<h2>Writing our option menu component</h2>
-				<p>To display the pizza</p>
+				<h3>Writing our option menu component</h3>
+				<img src="option menu.png" alt="Option menu" height="500rem" style="padding:.5rem">
 
 				<aside class="notes">
-					div>.options-menu>h2.options-menu__title+options-menu__list
+					<p>.col-xs-4>.options-menu>h2.options-menu__title+.options-menu__list</p>
+					<p>.option-menu-item>img.option-menu-item__image.option-menu-item__image--round+.option-menu-item__description>h3.option-menu-item__title+p</p>
+					<p>https://cdn-catalog.pizzahut.be/images/be/</p>
 				</aside>
 			</section>
 
 			<section>
-				<h2>Component bindings</h2>
+				<h3>Component bindings</h3>
 				<table>
 					<thead>
 						<tr>
@@ -273,12 +311,18 @@ angular
 			</section>
 
 			<section>
-				<h2>Writing our order component</h2>
-				<p>To display the current order</p>
+				<h3>Writing our order component</h3>
+				<img src="orders.png" alt="orders" height="500rem" style="padding:.5rem">
+
+				<aside class="notes">
+					<pre>
+.order-row>h1.text-center+h3.order-item__title>i.fa.fa-check
+					</pre>
+				</aside>
 			</section>
 
 			<section>
-				<h2>ControllerAs syntax</h2>
+				<h3>ControllerAs syntax</h3>
 				<ul>
 					<li>More clear</li>
 					<li>$parent becomes redundant</li>
@@ -295,11 +339,11 @@ angular
 			</section>
 
 			<section>
-				<h2>Writing our pizza service unit test</h2>
+				<h3>Writing our pizza service unit test</h3>
 			</section>
 
 			<section>
-				<h2>Recap: components</h2>
+				<h3>Recap: components</h3>
 				<ul>
 					<li>Default controllerAs syntax ($ctrl)</li>
 					<li>Isolated</li>
@@ -320,8 +364,8 @@ angular
 			</section>
 
 			<section>
-				<h2>The end!</h2>
-				<p><img class="linkedin" height="100rem" style="margin-top: 10rem;background: #fff; border: 0; border-radius: 1rem;" src="linkedin.svg"
+				<h3>The end!</h3>
+				<p><img class="linkedin" height="100rem" style="margin-top: 10rem;background: #fff; border: 0; border-radius: .5rem;" src="linkedin.svg"
 					 alt="Linked In"></p>
 			</section>
 		</div>
